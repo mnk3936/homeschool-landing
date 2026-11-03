@@ -3,31 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Think Culture</title>
+    <title>Creators! Welcome to Calicut</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
-        html, body {
-            height: 100%;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            overflow: hidden; /* Prevents scrollbars */
-            background-color: #0d0f12; /* Dark sleek background */
+        /* Custom Font-Face setup for local Agrandir font */
+        @font-face {
+            font-family: 'Agrandir';
+            src: url('./Agrandir.woff2') format('woff2'),
+                 url('./Agrandir.ttf') format('truetype'),
+                 url('./Agrandir.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --brand-green: #00A651;
+        }
+
+        body {
+            font-family: 'Agrandir', 'Syne', 'Outfit', sans-serif;
+            background-color: #ffffff;
+            color: var(--brand-green);
+        }
+
+        .text-brand {
+            color: #00A651;
+        }
+
+        /* Jagged Starburst Badge Styling */
+        .starburst-badge {
+            background-color: #00A651;
+            clip-path: polygon(
+                50% 0%, 55% 4%, 60% 0%, 65% 5%, 71% 2%, 75% 8%, 81% 6%, 84% 13%, 90% 12%, 92% 20%, 97% 20%, 97% 28%, 100% 30%, 98% 38%, 100% 41%, 97% 49%, 100% 52%, 96% 59%, 99% 64%, 93% 69%, 95% 75%, 89% 79%, 89% 86%, 82% 87%, 81% 94%, 73% 93%, 71% 99%, 63% 96%, 60% 100%, 52% 95%, 48% 99%, 43% 94%, 38% 98%, 34% 92%, 28% 95%, 26% 88%, 19% 89%, 18% 81%, 11% 81%, 12% 73%, 5% 71%, 7% 63%, 1% 60%, 5% 53%, 0% 48%, 5% 41%, 1% 35%, 7% 31%, 4% 23%, 11% 21%, 12% 13%, 19% 13%, 21% 6%, 28% 8%, 31% 1%, 38% 5%, 41% 0%
+            );
+        }
+
+        .calicut-italic {
+            font-style: italic;
+            font-weight: 300;
         }
     </style>
 </head>
-<body class="h-screen w-screen flex items-center justify-center p-4 sm:p-8 antialiased select-none">
+<body class="h-screen w-screen overflow-hidden flex flex-col justify-between p-6 md:p-12 relative select-none bg-white">
 
-    <!-- Container for centering and containing the image -->
-    <main class="w-full h-full flex items-center justify-center relative">
-        <img 
-            src="Think Culture.png" 
-            alt="Think Culture" 
-            class="max-w-full max-h-full object-contain drop-shadow-2xl rounded-lg transition-all duration-300"
-            onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\"text-center text-gray-400 font-sans p-6 rounded-2xl bg-gray-900/50 border border-gray-800\"><p class=\"text-lg font-bold text-gray-200 mb-1\">Image Not Found</p><p class=\"text-xs text-gray-400\">Please ensure <code class=\"text-emerald-400 bg-black/40 px-2 py-0.5 rounded\">Think Culture.png</code> is placed in the root directory.</p></div>';"
-        />
+    <!-- TOP HEADER ROW -->
+    <header class="w-full flex justify-between items-start z-10">
+        <!-- 1st Edition Badge -->
+        <div class="flex items-baseline space-x-1">
+            <span class="text-6xl md:text-7xl font-extrabold text-brand leading-none">1</span>
+            <div class="flex flex-col text-brand leading-tight">
+                <span class="text-lg md:text-xl font-semibold">st</span>
+                <span class="text-sm md:text-base font-normal -mt-1">Edition</span>
+            </div>
+        </div>
+
+        <!-- Think Culture Logo (Root File) -->
+        <div class="w-28 sm:w-36 md:w-44 flex justify-end">
+            <img 
+                src="Think Culture.png" 
+                alt="Think Culture" 
+                class="w-full h-auto object-contain"
+                onerror="this.onerror=null; this.src='thinkculture.png';"
+            />
+        </div>
+    </header>
+
+    <!-- CENTER HERO CONTENT -->
+    <main class="w-full flex-1 flex flex-col items-center justify-center text-center z-10 px-4 my-auto">
+        <!-- Main Headline -->
+        <h1 class="text-brand text-5xl sm:text-7xl md:text-8xl lg:text-[110px] font-bold leading-[0.95] tracking-tight mb-4">
+            Creators!<br />
+            Welcome<br />
+            <span class="calicut-italic font-normal">to Calicut</span>
+        </h1>
+
+        <!-- Date & Venue Details -->
+        <div class="mt-4 md:mt-6 space-y-1">
+            <p class="text-brand text-lg sm:text-xl md:text-2xl font-medium tracking-wide">
+                21st November 2026 <span class="mx-1 font-light">|</span> Saturday
+            </p>
+            <p class="text-gray-500 text-sm sm:text-base md:text-lg font-light tracking-wide">
+                Backyard Social Space,Calicut
+            </p>
+        </div>
     </main>
+
+    <!-- BOTTOM FOOTER ROW -->
+    <footer class="w-full flex justify-between items-end z-10 relative">
+        <!-- Spacer Left -->
+        <div class="w-24 sm:w-32 hidden sm:block"></div>
+
+        <!-- Center: Home School Creators Logo (Root File) -->
+        <div class="flex justify-center flex-1 sm:flex-none">
+            <img 
+                src="homeschool.png" 
+                alt="Home School Creators" 
+                class="h-12 sm:h-16 md:h-20 object-contain"
+                onerror="this.onerror=null; this.src='Home School Creators logo.png';"
+            />
+        </div>
+
+        <!-- Bottom Right: Know More Starburst Badge -->
+        <div class="relative cursor-pointer group hover:scale-105 transition-transform duration-200">
+            <div class="starburst-badge w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 flex items-center justify-center text-center transform -rotate-12 shadow-lg">
+                <span class="text-white font-black text-sm sm:text-base md:text-xl tracking-wider leading-tight uppercase px-2">
+                    KNOW<br />MORE
+                </span>
+            </div>
+
+            <!-- Pointer Cursor Arrow Overlay -->
+            <svg class="w-6 h-6 sm:w-8 sm:h-8 absolute -bottom-2 -right-2 text-black fill-current drop-shadow" viewBox="0 0 24 24">
+                <path d="M4 0l16 12.279-6.951 1.17 4.325 8.817-3.571 1.734-4.35-8.879-5.453 4.709z"/>
+            </svg>
+        </div>
+    </footer>
 
 </body>
 </html>
